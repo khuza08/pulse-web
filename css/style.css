@@ -497,6 +497,10 @@ footer {
     }
     .hero-inner {
         padding: 56px 0 48px;
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .footer-grid {
         margin-top: 96px;
