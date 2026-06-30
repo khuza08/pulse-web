@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0a0a" />
+        <meta
+            name="description"
+            content="Pulse — Music streaming for everyone. A maintained fork of ViMusic with better UI and UX."
+        />
+        <title>Pulse</title>
+
+        <link
+            rel="icon"
+            type="image/png"
+            href="https://github.com/khuza08/pulse/raw/master/app/src/main/ic_launcher-playstore.png"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="site">
+            <div class="wrap">
+                <a href="#" class="brand" data-testid="brand-link">
+                    <img
+                        src="https://github.com/khuza08/pulse/raw/master/app/src/main/ic_launcher-playstore.png"
+                        alt="Pulse logo"
+                    />
+                    <span class="brand-name">Pulse</span>
+                    <span id="nav-version" class="brand-version mono">—</span>
+                </a>
+
+                <nav class="site-nav">
+                    <a href="#features" data-testid="nav-features">Features</a>
+                    <a href="#releases" data-testid="nav-releases">Releases</a>
+                    <a
+                        href="https://github.com/khuza08/pulse"
+                        target="_blank"
+                        rel="noopener"
+                        data-testid="nav-github"
+                        >GitHub</a
+                    >
+                </nav>
+
+                <a
+                    id="header-download-btn"
+                    href="#releases"
+                    class="btn btn-primary btn-sm"
+                    data-testid="header-download-btn"
+                    >Download</a
+                >
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="wrap hero-inner">
+                <div>
+                    <h1>Music streaming<br />for <em>everyone</em>.</h1>
+                    <p class="lede">
+                        Lightweight, customizable music player for Android.
+                        Stream from YouTube Music, cache offline, sync lyrics.
+                    </p>
+
+                    <div class="cta-row" data-testid="hero-cta-group">
+                        <a
+                            id="hero-download-btn"
+                            href="#releases"
+                            class="btn btn-primary"
+                            data-testid="hero-download-btn"
+                        >
+                            Download
+                            <span
+                                id="hero-download-version"
+                                class="mono"
+                                style="opacity: 0.7"
+                                >—</span
+                            >
+                        </a>
+                        <a
+                            href="https://github.com/khuza08/pulse"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-ghost"
+                            data-testid="hero-github-btn"
+                            >GitHub</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="wrap section-pad">
+                <details class="features-section">
+                    <summary class="features-header">
+                        <h2 class="section-title">Features</h2>
+                        <span class="feature-chevron">›</span>
+                    </summary>
+                    <div class="feature-grid" data-testid="features-grid"></div>
+                </details>
+            </div>
+        </section>
+
+        <section id="releases">
+            <div class="wrap section-pad">
+                <details class="releases-section">
+                    <summary class="releases-header">
+                        <h2 class="section-title">Releases</h2>
+                        <span class="feature-chevron">›</span>
+                    </summary>
+
+                    <div
+                        id="releases-list"
+                        class="releases-list"
+                        data-testid="releases-list"
+                    >
+                        <div class="release-row">
+                            <div
+                                class="skeleton"
+                                style="height: 20px; width: 160px"
+                            ></div>
+                        </div>
+                        <div class="release-row">
+                            <div
+                                class="skeleton"
+                                style="height: 20px; width: 130px"
+                            ></div>
+                        </div>
+                    </div>
+
+                    <div class="releases-footer">
+                        <a
+                            href="https://github.com/khuza08/pulse/releases"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-ghost btn-sm"
+                            data-testid="releases-github-link"
+                            >All on GitHub →</a
+                        >
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer>
+            <div class="wrap footer-grid">
+                <div>
+                    <div class="brand">
+                        <img
+                            src="https://github.com/khuza08/pulse/raw/master/app/src/main/ic_launcher-playstore.png"
+                            alt="Pulse"
+                        />
+                        <span class="brand-name">Pulse</span>
+                    </div>
+                    <p
+                        style="
+                            color: var(--ink-faint);
+                            font-size: 14px;
+                            margin-top: 16px;
+                            max-width: 32ch;
+                        "
+                    >
+                        Music streaming for everyone. A maintained fork of
+                        ViMusic with better UI and UX.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-col-title">Project</p>
+                    <ul>
+                        <li>
+                            <a
+                                href="https://github.com/khuza08/pulse"
+                                target="_blank"
+                                rel="noopener"
+                                >Repository</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/khuza08/pulse/releases"
+                                target="_blank"
+                                rel="noopener"
+                                >Releases</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/khuza08/pulse/issues"
+                                target="_blank"
+                                rel="noopener"
+                                >Issues</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://github.com/khuza08/pulse/blob/master/LICENSE"
+                                target="_blank"
+                                rel="noopener"
+                                >License (GPL-3.0)</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="footer-col-title">Disclaimer</p>
+                    <p
+                        style="
+                            color: var(--ink-faint);
+                            font-size: 13px;
+                            line-height: 1.6;
+                        "
+                    >
+                        Pulse is not affiliated with, funded, authorized,
+                        endorsed by, or associated with YouTube, Google LLC, or
+                        any of its affiliates and subsidiaries.
+                    </p>
+                </div>
+            </div>
+            <div class="wrap footer-bottom">
+                <p>© <span id="year"></span> Pulse · GPL-3.0</p>
+                <p>Built with vanilla HTML/CSS/JS</p>
+            </div>
+        </footer>
+
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
