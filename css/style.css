@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Geist Pixel";
+    src: url("../fonts/GeistPixel-Square.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg: #0a0a0a;
     --bg-raised: #111111;
@@ -173,6 +181,7 @@ header.site .wrap {
     }
 }
 .hero h1 {
+    font-family: "Geist Pixel";
     font-size: clamp(36px, 5vw, 56px);
     line-height: 1.05;
     letter-spacing: -0.025em;
@@ -221,6 +230,7 @@ section {
     }
 }
 .section-title {
+    font-family: "Geist Pixel";
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 600;
     letter-spacing: -0.02em;
