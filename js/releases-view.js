@@ -43,18 +43,17 @@ export function renderReleases(releases) {
         <div class="release-row" data-testid="release-row-${idx}">
           <div style="min-width:0;">
             <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-              <span class="release-tag">${escapeHtml(rel.tag_name || "")}</span>
               <span style="color:var(--ink);font-weight:500;">${escapeHtml(rel.name || rel.tag_name || "")}</span>
               ${rel.prerelease ? '<span class="badge-pre">pre-release</span>' : ""}
               ${idx === 0 ? '<span class="badge-latest">latest</span>' : ""}
             </div>
             <div class="mono" style="font-size:12px;color:var(--ink-faint);margin-top:8px;">
-              ${escapeHtml(formatDate(rel.published_at))}${asset ? " · " + escapeHtml(asset.name) + " · " + escapeHtml(size) : ""}
+              ${escapeHtml(formatDate(rel.published_at))}${asset ? " · <span class=\"release-filename\">" + escapeHtml(asset.name) + "</span> · " + escapeHtml(size) : ""}
             </div>
           </div>
           <div style="display:flex;gap:8px;flex-shrink:0;">
-            <a href="${rel.html_url}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-testid="release-notes-${idx}">Notes</a>
-            <a href="${downloadUrl}" class="btn btn-primary btn-sm" data-testid="release-download-${idx}">Download</a>
+            <a href="${rel.html_url}" target="_blank" rel="noopener" class="release-notes-btn btn btn-ghost btn-sm" data-testid="release-notes-${idx}">Notes</a>
+            <a href="${downloadUrl}" class="btn btn-primary btn-sm" data-testid="release-download-${idx}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="download-text">Download</span></a>
           </div>
         </div>`;
     })

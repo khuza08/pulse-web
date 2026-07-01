@@ -397,16 +397,7 @@ section {
 }
 .release-row:hover {
     background: var(--bg-raised);
-}
-.release-tag {
-    font-family: "Geist Mono", monospace;
-    font-size: 12px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 2px 8px;
-    color: var(--ink-dim);
-}
-.badge-latest {
+}.badge-latest {
     font-family: "Geist Mono", monospace;
     font-size: 10px;
     background: var(--ink);
@@ -514,6 +505,21 @@ footer {
     }
     .footer-grid {
         margin-top: 96px;
+    }
+}
+
+@media (max-width: 768px) {
+    .release-notes-btn {
+        display: none;
+    }
+    .download-text {
+        display: none;
+    }
+    .release-filename {
+        display: none;
+    }
+    .release-row .btn-primary.btn-sm {
+        padding: 8px;
     }
 }
 
