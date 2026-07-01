@@ -346,6 +346,60 @@ section {
     line-height: 1.5;
 }
 
+.screenshots-section {
+    border: none;
+}
+.screenshots-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    margin: 0;
+}
+.screenshots-header::-webkit-details-marker {
+    display: none;
+}
+.screenshots-header::marker {
+    content: "";
+}
+.screenshots-header .section-title {
+    margin: 0;
+}
+.screenshots-section[open] .feature-chevron {
+    transform: rotate(90deg);
+}
+.shot-version-group {
+    margin-top: 24px;
+}
+.shot-version-label {
+    font-family: "Geist Mono", monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+}
+.shot-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+@media (min-width: 640px) {
+    .shot-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.shot-row img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--line);
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.shot-row img:hover {
+    transform: scale(1.02);
+    border-color: var(--ink-faint);
+}
+
 .releases-section {
     border: none;
 }
