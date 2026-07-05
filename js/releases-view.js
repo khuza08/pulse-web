@@ -23,7 +23,11 @@ export function renderLatest(rel) {
   const heroVersion = document.getElementById("hero-download-version");
 
   if (navVersion) navVersion.textContent = tag;
-  if (heroBtn) heroBtn.href = downloadUrl;
+  if (heroBtn) {
+    heroBtn.href = downloadUrl;
+    heroBtn.target = "_blank";
+    heroBtn.rel = "noopener noreferrer";
+  }
   if (heroVersion) heroVersion.textContent = tag;
 }
 
@@ -53,7 +57,7 @@ export function renderReleases(releases) {
           </div>
           <div style="display:flex;gap:8px;flex-shrink:0;">
             <a href="${rel.html_url}" target="_blank" rel="noopener" class="release-notes-btn btn btn-ghost btn-sm" data-testid="release-notes-${idx}">Notes</a>
-            <a href="${downloadUrl}" class="btn btn-primary btn-sm" data-testid="release-download-${idx}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="download-text">Download</span></a>
+            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-testid="release-download-${idx}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="download-text">Download</span></a>
           </div>
         </div>`;
     })
