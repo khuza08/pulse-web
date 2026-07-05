@@ -1,9 +1,4 @@
-import {
-  formatBytes,
-  formatDate,
-  platformFromName,
-  escapeHtml,
-} from "./utils.js";
+import { formatBytes, formatDate, escapeHtml } from "./utils.js";
 import { REPO } from "./github.js";
 
 function pickAsset(rel) {
@@ -14,9 +9,9 @@ function pickAsset(rel) {
 }
 
 export function renderLatest(rel) {
+  const tag = rel.tag_name || "";
   const asset = pickAsset(rel);
   const downloadUrl = asset?.browser_download_url || rel.html_url;
-  const tag = rel.tag_name || "";
 
   const navVersion = document.getElementById("nav-version");
   const heroBtn = document.getElementById("hero-download-btn");
@@ -25,8 +20,8 @@ export function renderLatest(rel) {
   if (navVersion) navVersion.textContent = tag;
   if (heroBtn) {
     heroBtn.href = downloadUrl;
-    heroBtn.target = "_blank";
-    heroBtn.rel = "noopener noreferrer";
+    heroBtn.target = "_top";
+    heroBtn.rel = "noopener";
   }
   if (heroVersion) heroVersion.textContent = tag;
 }
@@ -41,8 +36,8 @@ export function renderReleases(releases) {
   list.innerHTML = releases
     .map((rel, idx) => {
       const asset = pickAsset(rel);
-      const downloadUrl = asset?.browser_download_url || rel.html_url;
       const size = asset ? formatBytes(asset.size) : "";
+      const downloadUrl = asset?.browser_download_url || rel.html_url;
       return `
         <div class="release-row" data-testid="release-row-${idx}">
           <div style="min-width:0;">
@@ -57,7 +52,7 @@ export function renderReleases(releases) {
           </div>
           <div style="display:flex;gap:8px;flex-shrink:0;">
             <a href="${rel.html_url}" target="_blank" rel="noopener" class="release-notes-btn btn btn-ghost btn-sm" data-testid="release-notes-${idx}">Notes</a>
-            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-testid="release-download-${idx}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="download-text">Download</span></a>
+            <a href="${downloadUrl}" rel="noopener" class="btn btn-primary btn-sm" data-testid="release-download-${idx}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="download-text">Download</span></a>
           </div>
         </div>`;
     })

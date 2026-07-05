@@ -1,3 +1,5 @@
+import { escapeHtml } from "./utils.js";
+
 const FEATURES = [
   {
     t: "YouTube Music",
@@ -27,8 +29,6 @@ const FEATURES = [
     d: "Listen on the road with full Android Auto support.",
   },
 ];
-
-import { escapeHtml } from "./utils.js";
 
 export function renderFeatures(target) {
   target.innerHTML = FEATURES.map(

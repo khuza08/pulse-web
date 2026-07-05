@@ -22,21 +22,6 @@ export function formatDate(iso) {
   }
 }
 
-export function platformFromName(name) {
-  const n = (name || "").toLowerCase();
-  if (n.endsWith(".apk")) return "Android";
-  if (n.endsWith(".exe") || n.endsWith(".msi")) return "Windows";
-  if (n.endsWith(".dmg") || n.endsWith(".pkg")) return "macOS";
-  if (
-    n.endsWith(".deb") ||
-    n.endsWith(".rpm") ||
-    n.endsWith(".appimage") ||
-    n.endsWith(".tar.gz")
-  )
-    return "Linux";
-  return "File";
-}
-
 export function escapeHtml(s) {
   return (s || "").replace(
     /[&<>"']/g,
@@ -49,29 +34,4 @@ export function escapeHtml(s) {
         "'": "&#39;",
       })[c],
   );
-}
-
-export function renderChangelog(body) {
-  if (!body) return "";
-  const lines = body.split(/\r?\n/);
-  let html = "";
-  let inList = false;
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (/^[-*]\s+/.test(line)) {
-      if (!inList) {
-        html += "<ul>";
-        inList = true;
-      }
-      html += `<li>${escapeHtml(line.replace(/^[-*]\s+/, ""))}</li>`;
-    } else {
-      if (inList) {
-        html += "</ul>";
-        inList = false;
-      }
-      if (line) html += `<p>${escapeHtml(line)}</p>`;
-    }
-  }
-  if (inList) html += "</ul>";
-  return html;
 }
