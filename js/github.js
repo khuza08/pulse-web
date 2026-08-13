@@ -1,4 +1,4 @@
-const REPO = "khuza08/pulse";
+const REPO = "huza08/pulse";
 const API_LATEST = `https://api.github.com/repos/${REPO}/releases/latest`;
 const API_ALL = `https://api.github.com/repos/${REPO}/releases?per_page=10`;
 
